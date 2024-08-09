@@ -11,7 +11,10 @@ export default function BeforeAfterSlider() {
 
   return (
     <div className="container" ref={containerRef}>
-      <div className="before" style={{ width: `${sliderPosition}%` }}></div>
+      <div
+        className="before"
+        //    style={{ width: `${sliderPosition}%` }}
+      ></div>
       <div className="after"></div>
       <input
         type="range"
