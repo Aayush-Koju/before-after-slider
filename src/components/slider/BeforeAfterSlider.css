@@ -7,24 +7,28 @@
     overflow: hidden;
 }
 
-.before, .after {
+.before-image, .after-image {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    background-size: 900px 100%;
+    background-size: cover;
     background-position: center;
 }
 
-.before {
+.before-image {
+    width: 100%;
     background-image: url('../../../public/images/castle.jpg');
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
 }
 
-.after {
+.after-image {
     background-image: url('../../../public/images/london.jpg');
-    width: 50%;
-}
+    z-index: 1;
+    width: 100%;
+} 
 
 
 
@@ -34,11 +38,13 @@
     left: 0;
     width: 100%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: 3;
     pointer-events: none;
 }
 
 .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     pointer-events: all;
     width: 20px;
     height: 20px;

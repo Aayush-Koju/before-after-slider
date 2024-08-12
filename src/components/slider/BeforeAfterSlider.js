@@ -12,10 +12,10 @@ export default function BeforeAfterSlider() {
   return (
     <div className="container" ref={containerRef}>
       <div
-        className="before"
-        //    style={{ width: `${sliderPosition}%` }}
+        className="before-image"
+        style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       ></div>
-      <div className="after"></div>
+      <div className="after-image"></div>
       <input
         type="range"
         className="slider"
