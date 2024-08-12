@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import "./BeforeAfterSlider.css";
 
 export default function BeforeAfterSlider() {
@@ -19,9 +19,15 @@ export default function BeforeAfterSlider() {
       <input
         type="range"
         className="slider"
+        min="0"
+        max="100"
         value={sliderPosition}
         onChange={handleSliderChange}
       ></input>
+      <div
+        className="slider-button"
+        style={{ left: `calc(${sliderPosition}% -15px)` }}
+      ></div>
     </div>
   );
 }

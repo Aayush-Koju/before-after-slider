@@ -5,6 +5,7 @@
     border: 1px solid black;
     margin: 0 auto;
     overflow: hidden;
+    align-content: center;
 }
 
 .before-image, .after-image {
@@ -33,24 +34,73 @@
 
 
 .slider {
-    position: absolute;
+    /* position: absolute;
     top:50%;
     left: 0;
     width: 100%;
     transform: translateY(-50%);
     z-index: 3;
-    pointer-events: none;
+    pointer-events: none; */
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: none;
+    outline: none;
+    margin: 0;
+    transition: all .2s;
+    z-index: 3;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    pointer-events: all;
-    width: 20px;
-    height: 20px;
-    background: wheat;
+    /* pointer-events: all; */
+    width: 6px;
+    height: 100%;
+    background: white;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 4;
+}
+
+.slider-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #5d5d5d;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+}
+
+.slider-button::before, .slider-button::after {
+    content: '';
+    position: absolute;
+    border: solid #5D5D5D;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(-45deg);
+}
+
+.slider-button::before {
+    top: 10px;
+    left: 10px;
+}
+
+.slider-button::after {
+    top: 10px;
+    left: 10px;
+    transform: rotate(135deg);
 }
 
 
