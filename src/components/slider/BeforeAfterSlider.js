@@ -39,26 +39,29 @@ export default function BeforeAfterSlider() {
     <>
       <h1>Before After Comparision Slider </h1>
       <div className="comparision-container">
+        <h3>Enter files you want to compare</h3>
         <div className="input-container">
-          <h3>Enter files you want to compare</h3>
+          <div className="upload-before-image-container">
+            <label htmlFor="upload-before-image">Before Image</label>
+            <input
+              type="file"
+              id="upload-before-image"
+              onChange={handleBeforeImageUpload}
+              hidden
+            ></input>
+            <span>{fileName.before}</span>
+          </div>
 
-          <label htmlFor="upload-before-image">Before Image</label>
-          <input
-            type="file"
-            id="upload-before-image"
-            onChange={handleBeforeImageUpload}
-            hidden
-          ></input>
-          <span>{fileName.before}</span>
-
-          <label htmlFor="upload-after-image">After Image</label>
-          <input
-            type="file"
-            id="upload-after-image"
-            onChange={handleAfterImageUpload}
-            hidden
-          ></input>
-          <span>{fileName.after}</span>
+          <div className="upload-before-image-container">
+            <label htmlFor="upload-after-image">After Image</label>
+            <input
+              type="file"
+              id="upload-after-image"
+              onChange={handleAfterImageUpload}
+              hidden
+            ></input>
+            <span>{fileName.after}</span>
+          </div>
         </div>
         <div className="container" ref={containerRef}>
           <div
