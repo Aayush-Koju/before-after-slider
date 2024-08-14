@@ -6,6 +6,32 @@ h1 {
     color: #333;
 }
 
+.comparision-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.input-container {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.input-container label {
+    background-color: indigo;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
 .container {
     position: relative;
     width: 900px;
@@ -28,13 +54,13 @@ h1 {
 
 .before-image {
     width: 100%;
-    background-image: url('../../../public/images/castle.jpg');
+    /* background-image: url('../../../public/images/castle.jpg'); */
     z-index: 2;
     clip-path: inset(0 50% 0 0);
 }
 
 .after-image {
-    background-image: url('../../../public/images/london.jpg');
+    /* background-image: url('../../../public/images/london.jpg'); */
     z-index: 1;
     width: 100%;
 } 
@@ -68,11 +94,10 @@ h1 {
     z-index: 4;
 }
 
-.slider-button {
+.slider-line {
     position: absolute;
-    width: 30px;
-    height: 800px;
-    border-radius: 50%;
+    width: 6px;
+    height: 900px;
     background-color: white;
     border: 2px solid #5d5d5d;
     transform: translate(-50%, -50%);
@@ -83,6 +108,24 @@ h1 {
     justify-content: center;
     pointer-events: none;
     top: 50%;
+}
+
+.slider-button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #5d5d5d;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    top: 50%;
+    left: 50%;
 }
 
 .slider-button::before, .slider-button::after {
