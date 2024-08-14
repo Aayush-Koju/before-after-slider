@@ -4,6 +4,10 @@ import "./BeforeAfterSlider.css";
 export default function BeforeAfterSlider() {
   const [beforeImage, setBeforeImage] = useState(null);
   const [afterImage, setAfterImage] = useState(null);
+  const [fileName, setFileName] = useState({
+    before: "No File Choosen",
+    after: "No File Choosen",
+  });
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef(null);
 
@@ -18,6 +22,7 @@ export default function BeforeAfterSlider() {
       setBeforeImage(reader.result);
     };
     reader.readAsDataURL(file);
+    setFileName({ before: file.name, after: fileName.after });
   };
 
   const handleAfterImageUpload = (e) => {
@@ -27,6 +32,7 @@ export default function BeforeAfterSlider() {
       setAfterImage(reader.result);
     };
     reader.readAsDataURL(file);
+    setFileName({ before: fileName.before, after: file.name });
   };
 
   return (
@@ -34,23 +40,25 @@ export default function BeforeAfterSlider() {
       <h1>Before After Comparision Slider </h1>
       <div className="comparision-container">
         <div className="input-container">
-          <h2>Enter files you want to compare</h2>
+          <h3>Enter files you want to compare</h3>
 
-          <label for="upload-before-image">Before Image</label>
+          <label htmlFor="upload-before-image">Before Image</label>
           <input
             type="file"
             id="upload-before-image"
             onChange={handleBeforeImageUpload}
             hidden
           ></input>
+          <span>{fileName.before}</span>
 
-          <label for="upload-after-image">After Image</label>
+          <label htmlFor="upload-after-image">After Image</label>
           <input
             type="file"
             id="upload-after-image"
             onChange={handleAfterImageUpload}
             hidden
           ></input>
+          <span>{fileName.after}</span>
         </div>
         <div className="container" ref={containerRef}>
           <div
