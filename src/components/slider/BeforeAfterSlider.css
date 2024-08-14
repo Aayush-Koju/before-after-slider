@@ -1,12 +1,13 @@
 body {
-    background-color: #23987f;
-    color: #e0e0e0;
+    background-color: #d7e3e1;
+    color: #2f2c2c;
 }
 
 h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
+    margin-top: 50px;
     /* color: #c7d2fe; */
 }
 
@@ -26,7 +27,7 @@ h3 {
 
 .input-container {
     display: flex;
-    margin: 10px;
+    margin: 15px;
     flex-direction: row;
     justify-content: space-around;
 }
@@ -45,10 +46,12 @@ h3 {
     position: relative;
     width: 900px;
     height: 600px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 0 auto;
     overflow: hidden;
     align-content: center;
+    border-radius: 30px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .before-image, .after-image {

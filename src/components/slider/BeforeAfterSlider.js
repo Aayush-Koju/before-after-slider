@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import "./BeforeAfterSlider.css";
 
 export default function BeforeAfterSlider() {
-  const [beforeImage, setBeforeImage] = useState(null);
-  const [afterImage, setAfterImage] = useState(null);
+  const [beforeImage, setBeforeImage] = useState("/images/castle.jpg");
+  const [afterImage, setAfterImage] = useState("/images/london.jpg");
   const [fileName, setFileName] = useState({
     before: "No File Choosen",
     after: "No File Choosen",
@@ -49,7 +49,7 @@ export default function BeforeAfterSlider() {
               onChange={handleBeforeImageUpload}
               hidden
             ></input>
-            <span>{fileName.before}</span>
+            <span> {fileName.before}</span>
           </div>
 
           <div className="upload-before-image-container">
@@ -60,7 +60,7 @@ export default function BeforeAfterSlider() {
               onChange={handleAfterImageUpload}
               hidden
             ></input>
-            <span>{fileName.after}</span>
+            <span> {fileName.after}</span>
           </div>
         </div>
         <div className="container" ref={containerRef}>
