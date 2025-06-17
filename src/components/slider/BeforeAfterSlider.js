@@ -4,10 +4,6 @@ import "./BeforeAfterSlider.css";
 export default function BeforeAfterSlider() {
   const [beforeImage, setBeforeImage] = useState("/images/castle.jpg");
   const [afterImage, setAfterImage] = useState("/images/london.jpg");
-  // const [fileName, setFileName] = useState({
-  //   before: "No File Choosen",
-  //   after: "No File Choosen",
-  // });
   const [sliderPosition, setSliderPosition] = useState(50);
   const containerRef = useRef(null);
 
